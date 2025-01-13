@@ -1,4 +1,4 @@
-# Viva_Tales - Blog Website
+# Viva_Tales - Blog Application
 ### 👀 Preview:
 
 <img src="./images/viva_tales.png">
@@ -9,13 +9,14 @@
 
 ### Viva Tales - Fully Free to Use Blog Application - Powered by [@xodivorce](https://instagram.com/xodivorce) ✨
 [![status](https://img.shields.io/badge/status-active-brightgreen.svg?style=flat)](https://github.com/xeorl/xeorl-portfolio/)
-[![version](https://img.shields.io/badge/version-v1.0.5-yellow.svg?style=flat)](https://github.com/xeorl/xeorl-portfolio/)
+[![version](https://img.shields.io/badge/version-v1.0.6-yellow.svg?style=flat)](https://github.com/xeorl/xeorl-portfolio/)
 [![PRs](https://img.shields.io/badge/PRs-welcome-blue.svg?style=flat)](https://github.com/xeorl/xeorl-portfolio/)
 <br></br>
 
 ### 📌 Tech Stack
 
 Here’s what fuels this site:
+
 ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
