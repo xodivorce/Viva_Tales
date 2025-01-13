@@ -1,4 +1,4 @@
-# [Viva_Tales - Blog Website](https://www.xodivorce.in)
+# Viva_Tales - Blog Website
 ### 👀 Preview:
 
 <img src="./images/viva_tales.png">
@@ -9,18 +9,15 @@
 
 ### Viva Tales - Fully Free to Use Blog Application - Powered by [@xodivorce](https://instagram.com/xodivorce) ✨
 [![status](https://img.shields.io/badge/status-active-brightgreen.svg?style=flat)](https://github.com/xeorl/xeorl-portfolio/)
-[![version](https://img.shields.io/badge/version-v1.0.2-yellow.svg?style=flat)](https://github.com/xeorl/xeorl-portfolio/)
+[![version](https://img.shields.io/badge/version-v1.0.4-yellow.svg?style=flat)](https://github.com/xeorl/xeorl-portfolio/)
 [![PRs](https://img.shields.io/badge/PRs-welcome-blue.svg?style=flat)](https://github.com/xeorl/xeorl-portfolio/)
 <br></br>
 
 ### 📌 Tech Stack
 
 Here’s what fuels this site:
-
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
