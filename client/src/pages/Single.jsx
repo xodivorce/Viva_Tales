@@ -43,27 +43,24 @@ const Single = () => {
     return url;
   };
 
-
   const createMarkup = (htmlContent) => {
-    if (!htmlContent) return { __html: '' };
-    
+    if (!htmlContent) return { __html: "" };
 
-    const div = document.createElement('div');
+    const div = document.createElement("div");
     div.innerHTML = htmlContent;
-   
-    const links = div.getElementsByTagName('a');
+
+    const links = div.getElementsByTagName("a");
     for (let link of links) {
-      const href = link.getAttribute('href');
+      const href = link.getAttribute("href");
       if (href) {
-        
-        link.setAttribute('href', ensureAbsoluteUrl(href));
-        link.setAttribute('target', '_blank');
-        link.setAttribute('rel', 'noopener noreferrer');
+        link.setAttribute("href", ensureAbsoluteUrl(href));
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
       }
     }
-    
+
     return {
-      __html: div.innerHTML
+      __html: div.innerHTML,
     };
   };
 
@@ -87,9 +84,9 @@ const Single = () => {
           )}
         </div>
         <h1>{post.title}</h1>
-        <div 
-          className="desc" 
-          dangerouslySetInnerHTML={createMarkup(post.desc)} 
+        <div
+          className="desc"
+          dangerouslySetInnerHTML={createMarkup(post.desc)}
         />
       </div>
       <Menu cat={post.cat} />

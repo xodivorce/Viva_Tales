@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 const User = () => {
-  const { username } = useParams(); // Get username from URL
+  const { username } = useParams();
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -14,11 +14,11 @@ const User = () => {
         setLoading(true);
         setError(null);
 
-        // Fetch posts for the specific user using the username
-        const res = await axios.get(`/posts/user/${username}`); // Use the correct URL structure
+        const res = await axios.get(`/posts/user/${username}`);
 
-        // Sort posts by date (newest first)
-        const sortedPosts = res.data.sort((a, b) => new Date(b.date) - new Date(a.date));
+        const sortedPosts = res.data.sort(
+          (a, b) => new Date(b.date) - new Date(a.date)
+        );
 
         setPosts(sortedPosts);
       } catch (err) {
@@ -44,23 +44,21 @@ const User = () => {
     return text;
   };
 
-  // Intersection Observer for scroll animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('show');
+            entry.target.classList.add("show");
           } else {
-            entry.target.classList.remove('show');
+            entry.target.classList.remove("show");
           }
         });
       },
       { threshold: 0.1, rootMargin: "20px" }
     );
 
-    // Observe all post elements
-    document.querySelectorAll('.post').forEach((post) => {
+    document.querySelectorAll(".post").forEach((post) => {
       observer.observe(post);
     });
 
@@ -130,24 +128,27 @@ const User = () => {
           posts.map((post) => (
             <div className="post" key={post.id}>
               <div className="post-img">
-                <img 
-                  src={`../upload/${post.img}`} 
-                  alt={post.title} 
-                  loading="lazy" 
+                <img
+                  src={`../upload/${post.img}`}
+                  alt={post.title}
+                  loading="lazy"
                 />
               </div>
               <div className="content">
                 <Link className="link" to={`/post/${post.id}`}>
                   <h1>{post.title}</h1>
-                  {(new Date() - new Date(post.date)) / (1000 * 60 * 60) <= 3 && (
-                    <span style={{
-                      backgroundColor: '#ff4757',
-                      color: 'white',
-                      padding: '2px 8px',
-                      borderRadius: '12px',
-                      fontSize: '12px',
-                      marginLeft: '10px'
-                    }}>
+                  {(new Date() - new Date(post.date)) / (1000 * 60 * 60) <=
+                    3 && (
+                    <span
+                      style={{
+                        backgroundColor: "#ff4757",
+                        color: "white",
+                        padding: "2px 8px",
+                        borderRadius: "12px",
+                        fontSize: "12px",
+                        marginLeft: "10px",
+                      }}
+                    >
                       New
                     </span>
                   )}
@@ -160,12 +161,16 @@ const User = () => {
             </div>
           ))
         ) : (
-          <p style={{
-            textAlign: 'center',
-            fontSize: '1.5rem',
-            fontStyle: 'italic',
-            marginTop: '20px'
-          }}>No blogs found for this user.</p>
+          <p
+            style={{
+              textAlign: "center",
+              fontSize: "1.5rem",
+              fontStyle: "italic",
+              marginTop: "20px",
+            }}
+          >
+            No blogs found for this user.
+          </p>
         )}
       </div>
     </div>

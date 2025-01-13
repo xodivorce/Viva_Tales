@@ -6,7 +6,6 @@ const Home = () => {
   const [posts, setPosts] = useState([]);
   const cat = useLocation().search;
 
-  // Fisher-Yates shuffle algorithm
   const shuffleArray = (array) => {
     const newArray = [...array];
     for (let i = newArray.length - 1; i > 0; i--) {
@@ -17,53 +16,51 @@ const Home = () => {
   };
 
   useEffect(() => {
-    // Set up intersection observer for scroll animations
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('show');
+            entry.target.classList.add("show");
           } else {
-            entry.target.classList.remove('show');
+            entry.target.classList.remove("show");
           }
         });
       },
       {
         threshold: 0.1,
-        rootMargin: '20px'
+        rootMargin: "20px",
       }
     );
 
-    // Observe all post elements
-    document.querySelectorAll('.post').forEach((post) => {
+    document.querySelectorAll(".post").forEach((post) => {
       observer.observe(post);
     });
 
     return () => observer.disconnect();
-  }, [posts]); // Re-run when posts change
+  }, [posts]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await axios.get(`/posts${cat}`);
-        
+
         const sortedPosts = [...res.data].sort((a, b) => {
-          return new Date(b.date) - new Date(a.date); // Sort by date, newer first
+          return new Date(b.date) - new Date(a.date);
         });
 
         const currentTime = new Date();
-        const newPosts = sortedPosts.filter(post => {
+        const newPosts = sortedPosts.filter((post) => {
           const postTime = new Date(post.date);
           const timeDiff = currentTime - postTime;
-          const hoursDiff = timeDiff / (1000 * 60 * 60); // Convert time difference to hours
-          return hoursDiff <= 24; // Show posts from the last 24 hours as "New"
+          const hoursDiff = timeDiff / (1000 * 60 * 60);
+          return hoursDiff <= 24;
         });
 
-        const olderPosts = sortedPosts.filter(post => {
+        const olderPosts = sortedPosts.filter((post) => {
           const postTime = new Date(post.date);
           const timeDiff = currentTime - postTime;
-          const hoursDiff = timeDiff / (1000 * 60 * 60); // Convert time difference to hours
-          return hoursDiff > 24; // Older posts (more than 24 hours ago)
+          const hoursDiff = timeDiff / (1000 * 60 * 60);
+          return hoursDiff > 24;
         });
 
         const shuffledOlderPosts = shuffleArray(olderPosts);
@@ -126,24 +123,27 @@ const Home = () => {
         {posts.map((post) => (
           <div className="post" key={post.id}>
             <div className="post-img">
-              <img 
-                src={`../upload/${post.img}`} 
-                alt="post cover" 
-                loading="lazy" 
+              <img
+                src={`../upload/${post.img}`}
+                alt="post cover"
+                loading="lazy"
               />
             </div>
             <div className="content">
               <Link className="link" to={`/post/${post.id}`}>
                 <h1>{post.title}</h1>
-                {(new Date() - new Date(post.date)) / (1000 * 60 * 60) <= 24 && (
-                  <span style={{
-                    backgroundColor: '#ff4757',
-                    color: 'white',
-                    padding: '2px 8px',
-                    borderRadius: '12px',
-                    fontSize: '12px',
-                    marginLeft: '10px'
-                  }}>
+                {(new Date() - new Date(post.date)) / (1000 * 60 * 60) <=
+                  24 && (
+                  <span
+                    style={{
+                      backgroundColor: "#ff4757",
+                      color: "white",
+                      padding: "2px 8px",
+                      borderRadius: "12px",
+                      fontSize: "12px",
+                      marginLeft: "10px",
+                    }}
+                  >
                     New
                   </span>
                 )}

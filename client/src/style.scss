@@ -88,7 +88,6 @@ $light-gray: #707070;
           background-color: #ccc;
           cursor: not-allowed;
         }
-        
 
         .links {
           display: flex;
@@ -118,7 +117,7 @@ $light-gray: #707070;
           align-items: center;
           justify-content: center;
           font-weight: 300;
-          border: 1px solid white; // to prevent items move when hover because the extra pixel of the border when hover
+          border: 1px solid white;
 
           &:hover {
             color: $brown-orange;
@@ -424,38 +423,37 @@ $light-gray: #707070;
           padding: 20px;
           font-family: Arial, sans-serif;
         }
-        
+
         .footer-content {
           display: flex;
           flex-direction: column;
           align-items: center;
         }
-        
+
         .footer-logo {
-          width: 100px; /* Adjust based on your logo size */
+          width: 100px;
           margin-bottom: 15px;
         }
-        
+
         .footer-text p {
           margin: 5px 0;
           font-size: 14px;
         }
-        
+
         .footer-links {
           margin-top: 20px;
         }
-        
+
         .footer-link {
           color: #fff;
           margin: 0 10px;
           text-decoration: none;
           font-size: 14px;
         }
-        
+
         .footer-link:hover {
           text-decoration: underline;
         }
-        
       }
     }
   }
