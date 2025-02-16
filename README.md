@@ -9,7 +9,7 @@
 
 ### Viva Tales - Fully Free to Use Blog Application - Powered by [@xodivorce](https://instagram.com/xodivorce) ✨
 [![status](https://img.shields.io/badge/status-active-brightgreen.svg?style=flat)](https://github.com/xeorl/xeorl-portfolio/)
-[![version](https://img.shields.io/badge/version-v1.0.6-yellow.svg?style=flat)](https://github.com/xeorl/xeorl-portfolio/)
+[![version](https://img.shields.io/badge/version-v1.0.7-yellow.svg?style=flat)](https://github.com/xeorl/xeorl-portfolio/)
 [![PRs](https://img.shields.io/badge/PRs-welcome-blue.svg?style=flat)](https://github.com/xeorl/xeorl-portfolio/)
 <br></br>
 
